@@ -1,9 +1,10 @@
 ---
-version: 0
-os: linux
+version: 0.0
+os: ubantu
 files:
   - source: /
-    destination: /var/www/html/WordPress
+    destination: /var/www/html/
+    overwrite: true
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
@@ -22,3 +23,6 @@ hooks:
     - location: scripts/stop_server.sh
       timeout: 300
       runas: root
+  validateService:
+    - location: scripts/validate_service.sh
+      timeout: 300
