@@ -8,6 +8,9 @@ files:
 hooks:
 hooks:
   BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
     - location: /script/location/xyz.sh
       timeout: 120
       runas: root
